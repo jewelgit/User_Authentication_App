@@ -1,0 +1,59 @@
+<html ang="en">
+
+<head>
+
+    <title>Customer_registration</title>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+    <%- include('nav') %>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel">
+                    <style>
+                        h5 { text-align: center }
+                    </style><h5 style= color:blue>CUSTOMER REGISTRATION</h5>
+                    <div class="panel panel-info">
+                        <form action="/api/auth/registerAdmin" method="POST">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" class="form-control" />
+
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" class="form-control" />
+
+                                <label for="password">Password</label>
+                                <input type="text" id="password" name="password" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label for="role">Select your role</label>
+                                <select multiple class="form-control" id="role" name="role">
+                                    <option>admin</option>
+                                    <option>Customer</option>
+                                </select>
+                            </div>
+                            <hr />
+                            <button type="submit" class="btn btn-info">Register</button>
+                            <button type="reset" class="btn btn-warning">Cancel</button>
+                            <hr />
+                            <div class="alert alert-info" role="alert">
+                                <%=msg%>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <%- include('footer') %>
+</body>
+
+</html>

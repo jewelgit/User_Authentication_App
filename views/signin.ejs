@@ -1,0 +1,69 @@
+<html ang="en">
+
+<head>
+
+</head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<body>
+    <%- include('nav') %>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel">
+                    <h5>Register</h5>
+                    <div class="panel panel-info">
+                        <form action="/api/auth/register" method="POST">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" class="form-control" />
+
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" class="form-control" />
+
+                                <label for="password">Password</label>
+                                <input type="text" id="password" name="password" class="form-control" />
+                            </div>
+                            <hr />
+                            <button type="submit" class="btn btn-info">Register</button>
+                            <button type="reset" class="btn btn-warning">Reset</button>
+                            <hr />
+                            <div class="alert alert-info" role="alert" id="msg1">
+                                <%=msg%>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="panel">
+                    <h5>Login</h5>
+                    <div class="panel panel-primary">
+                        <form action="/api/auth/login" method="POST">
+                            <div class="form-group">
+
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" class="form-control" />
+
+                                <label for="password">Password</label>
+                                <input type="password" id="password" name="password" class="form-control" />
+                            </div>
+                            <hr />
+                            <button type="submit" class="btn btn-success">Log In</button>
+                            <button type="reset" class="btn btn-danger">Reset</button>
+                            
+                            <hr />
+                            <div class="alert alert-info" role="alert" id="msg2">
+                                <%=invalid%>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('footer') %>
+</body>
+
+</html>
